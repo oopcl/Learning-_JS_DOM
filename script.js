@@ -1,36 +1,30 @@
 let output;
 
-//Get child elements 
-
 const parent = document.querySelector('.parent');
 
-output = parent.children ;
+output = parent.childNodes;
+output = parent.childNodes[0].textContent;
+output = parent.childNodes[0].nodeName;
+output = parent.childNodes[3].textContent;
+output = parent.childNodes[3].outerHTML;
 
-output = parent.children[1].innerText;
-output = parent.children[1].className;
-output = parent.children[1].nodeName;
+output = parent.childNodes[3].innerText = 'Child One';
+output = parent.childNodes[3].style.color = 'red';
 
-parent.children[1].innerText = 'Child Two';
-parent.children[1].style.color = 'red';
+output = parent.FirstChild;
+output = parent.lastChild;
 
-parent.firstElementChild.innerText = 'Child One';
-parent.lastElementChild.innerText = 'Child Three';
-
-//Get parent elements for a child
+//Parent nodes
 
 const child = document.querySelector('.child');
 
-output = child.parentElement;
-child.parentElement.style.border = '1px solid #ccc';
-child.parentElement.style.padding = '10px'
+output = child.parentNode;
 
-//Sibling elements 
-const secondItem = document.querySelector('.child:nth-child(2)');
+//Siblings
 
-output = secondItem;
-output = secondItem.nextElementSibling;
+const SecondItem = document.querySelector('child:nth-child(2)');
 
-secondItem.nextElementSibling.style.color = 'green';
-secondItem.previousElementSibling.style.color = 'Orange';
+output = SecondItem.nextSibling;
+output = SecondItem.previousSibling;
 
 console.log(output);
